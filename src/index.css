@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-deep: #250E42;
+    --primary-purple: #32145C;
+    --secondary-purple: #4E2174;
+    --bright-purple: #6D28D9;
+    --accent-gold: #D6B15E;
+    --accent-red: #D61C27;
+    --light-lavender: #F6F3FB;
+    --main-bg: #FAF9FD;
+    --surface-bg: #FFFFFF;
+    --main-text: #1C1726;
+    --secondary-text: #696075;
+    --muted-text: #8E869B;
+    --success: #15803D;
+    --warning: #D97706;
+    --danger: #DC2626;
+    --border-color: #EAE5F2;
+  }
+
+  body {
+    font-family: 'Sarabun', system-ui, -apple-system, sans-serif;
+    color: var(--main-text);
+    background-color: var(--main-bg);
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Prompt', 'Sarabun', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Tabular figures for data tables and dashboard metrics */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D1E5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9D8FB5;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
+
+/* D.A.R.E. Registry — bespoke visual system */
+.dare-registry-page {
+  isolation: isolate;
+}
+.dare-registry-heading::before {
+  content: "";
+  position: absolute;
+  inset: auto -3rem -6rem auto;
+  width: 19rem;
+  height: 19rem;
+  border: 2.2rem solid rgba(123, 63, 198, .07);
+  border-radius: 9999px;
+  pointer-events: none;
+}
+.dare-registry-heading::after {
+  content: "";
+  position: absolute;
+  right: 7rem;
+  top: -5.5rem;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(214,177,94,.15), rgba(214,177,94,0) 70%);
+  pointer-events: none;
+}
+.dare-registry-page input:focus-visible,
+.dare-registry-page select:focus-visible,
+.dare-registry-page button:focus-visible {
+  outline: 3px solid rgba(123, 63, 198, .24);
+  outline-offset: 2px;
+}
+.dare-registry-page article img {
+  background: linear-gradient(135deg, #eee4ff, #bda3ed 55%, #6541a1);
+}
+@media (max-width: 640px) {
+  .dare-registry-heading { border-radius: 22px; padding: 1.15rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dare-registry-page * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
